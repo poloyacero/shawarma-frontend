@@ -10,6 +10,7 @@ export default function Restaurant({ restaurant }) {
       <Map
         defaultZoom={17}
         defaultCenter={[restaurant.latitude, restaurant.longitude]}
+        yesIWantToUseGoogleMapApiInternals
       >
         <Marker
           key={restaurant.address}

@@ -13,7 +13,7 @@ const Map = ({ children, ...props }) => (
     <GoogleMapReact
       // for testing purpose only, add this API key in a environment variable
       bootstrapURLKeys={{
-        key: 'AIzaSyDs7RrfV4rRk26YtCFDgH0AxM-OP3T_GQI',
+        key: process.env.MAP_API_KEY,
       }}
       {...props}
     >
