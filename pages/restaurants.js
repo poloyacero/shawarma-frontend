@@ -1,19 +1,15 @@
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Map from '../components/Map';
 
 export default function Restaurants({ restaurants }) {
   return (
     <div>
-      {restaurants.map((e, index) => (
-        <div key={index}>
-          <Link as={`/restaurants/${e._id}`} href="/[restaurants]/[id]">
-            <a>
-              Navigate to {e.name} - {e.address}
-            </a>
-          </Link>
-        </div>
-      ))}
+      <Map
+        defaultZoom={11}
+        defaultCenter={[25.204849, 55.270782]}
+        places={restaurants}
+      />
     </div>
   );
 }

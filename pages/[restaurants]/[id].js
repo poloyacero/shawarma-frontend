@@ -3,6 +3,10 @@ import { useRouter } from 'next/router';
 import Marker from '../../components/Marker';
 import Map from '../../components/Map';
 
+const handleApiLoaded = (map, maps) => {
+  // use map and maps objects
+};
+
 export default function Restaurant({ restaurant }) {
   const router = useRouter();
   return (
@@ -11,6 +15,7 @@ export default function Restaurant({ restaurant }) {
         defaultZoom={17}
         defaultCenter={[restaurant.latitude, restaurant.longitude]}
         yesIWantToUseGoogleMapApiInternals
+        onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
       >
         <Marker
           key={restaurant.address}
